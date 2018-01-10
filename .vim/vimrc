@@ -1,0 +1,64 @@
+set nocompatible
+syntax on
+set nowrap
+set encoding=utf8
+
+call plug#begin('~/.vim/plugged')
+
+" General
+Plug 'mhinz/vim-startify'
+
+" Utity
+Plug 'scrooloose/nerdtree'
+Plug 'majutsushi/tagbar'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/fzf'
+" Plug Ags
+
+" Generic Programming Support 
+Plug 'jakedouglas/exuberant-ctags'
+Plug 'w0rp/ale'
+Plug 'easymotion/vim-easymotion'
+
+" Python support
+Plug 'klen/python-mode'
+
+" Git Support
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+
+" The / Interface
+Plug 'vim-airline/vim-airline'
+
+filetype plugin indent on    " required
+call plug#end()              " required
+
+"""""""""""""""""""""""""""""""""""""
+" Configuration Section
+"""""""""""""""""""""""""""""""""""""
+
+" Show linenumbers
+set number relativenumber
+set ruler
+
+" Set Proper Tabs
+set tabstop=4
+set shiftwidth=4
+set smarttab
+set expandtab
+
+" Always display the status line
+set laststatus=2
+
+" Enable highlighting of the current line
+set cursorline
+
+" Theme and Styling 
+set background=dark
+
+"""""""""""""""""""""""""""""""""""""
+" Mappings configurationn
+"""""""""""""""""""""""""""""""""""""
+map <C-n> :NERDTreeToggle<CR>
+map <C-m> :TagbarToggle<CR>
+
