@@ -13,15 +13,12 @@ Plug 'scrooloose/nerdtree'
 Plug 'majutsushi/tagbar'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf'
-" Plug Ags
+Plug 'gabesoft/vim-ags'
+Plug 'scrooloose/nerdcommenter'
 
 " Generic Programming Support 
-Plug 'jakedouglas/exuberant-ctags'
 Plug 'w0rp/ale'
 Plug 'easymotion/vim-easymotion'
-
-" Python support
-Plug 'klen/python-mode'
 
 " Git Support
 Plug 'tpope/vim-fugitive'
