@@ -1,61 +1,21 @@
-set nocompatible
-syntax on
-set nowrap
-set encoding=utf8
-
+"""""""""""""""""""""""""""""""""""""
+" Plugins first
+"""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
-" General
-Plug 'mhinz/vim-startify'
-
-" Utity
-Plug 'scrooloose/nerdtree'
-Plug 'majutsushi/tagbar'
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf'
-Plug 'gabesoft/vim-ags'
-Plug 'scrooloose/nerdcommenter'
-
-" Generic Programming Support 
-Plug 'w0rp/ale'
-Plug 'easymotion/vim-easymotion'
-
-" Git Support
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-
-" The / Interface
-Plug 'vim-airline/vim-airline'
+source ~/.vim/configs/plugins.vim
 
 filetype plugin indent on    " required
+
 call plug#end()              " required
 
 """""""""""""""""""""""""""""""""""""
 " Configuration Section
 """""""""""""""""""""""""""""""""""""
-
-" Show linenumbers
-set number relativenumber
-set ruler
-
-" Set Proper Tabs
-set tabstop=4
-set shiftwidth=4
-set smarttab
-set expandtab
-
-" Always display the status line
-set laststatus=2
-
-" Enable highlighting of the current line
-set cursorline
-
-" Theme and Styling 
-set background=dark
+source ~/.vim/configs/options.vim
 
 """""""""""""""""""""""""""""""""""""
 " Mappings configurationn
 """""""""""""""""""""""""""""""""""""
-map <C-n> :NERDTreeToggle<CR>
-map <C-m> :TagbarToggle<CR>
+source ~/.vim/configs/mappings.vim
 

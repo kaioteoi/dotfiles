@@ -36,6 +36,7 @@ export LANG=en_US.UTF-8
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
+alias vimconfig="vim ~/.vimrc"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
