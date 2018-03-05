@@ -53,3 +53,9 @@ let NERDTreeQuitOnOpen = 1
 let g:tagbar_autoclose = 1
 set tags=./tags,tags;$HOME
 
+""""""""""""""""""""""""""""""
+" ALELint options
+""""""""""""""""""""""""""""""
+let g:ale_linters = {
+\    'python' : ['pycodestyle']
+\}

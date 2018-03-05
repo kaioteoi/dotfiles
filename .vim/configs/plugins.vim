@@ -16,6 +16,7 @@ Plug 'yuttie/comfortable-motion.vim'
 Plug 'w0rp/ale'
 Plug 'easymotion/vim-easymotion'
 Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
+Plug 'tpope/vim-surround'
 
 " Git Support
 Plug 'tpope/vim-fugitive'
