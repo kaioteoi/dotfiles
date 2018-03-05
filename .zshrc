@@ -1,13 +1,10 @@
 ZSH_TMUX_AUTOSTART=true
 
 # Path to your oh-my-zsh installation.
-  export ZSH=/home/kaioteoi/.oh-my-zsh
+export ZSH=/home/kaioteoi/.oh-my-zsh
 
 # Theme name
 ZSH_THEME="af-magic"
-
-# Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -16,7 +13,7 @@ ENABLE_CORRECTION="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git z copybuffer copydir tmux)
+plugins=(git z tmux pip)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -41,3 +38,5 @@ alias vimconfig="vim ~/.vimrc"
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH=/opt/loggi/ops/ansible/bin:$PATH
+export PATH=$HOME/.local/bin:$PATH
+
