@@ -1,6 +1,5 @@
 " General
 Plug 'mhinz/vim-startify'
-Plug 'junegunn/seoul256.vim'
 
 " Utity
 Plug 'scrooloose/nerdtree'
@@ -9,8 +8,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf'
 Plug 'gabesoft/vim-ags'
 Plug 'scrooloose/nerdcommenter'
-Plug 'craigemery/vim-autotag'
-Plug 'yuttie/comfortable-motion.vim'
 
 " Generic Programming Support 
 Plug 'w0rp/ale'
@@ -24,4 +21,7 @@ Plug 'airblade/vim-gitgutter'
 
 " The / Interface
 Plug 'vim-airline/vim-airline'
+Plug 'flazz/vim-colorschemes'
 
+" Markdown
+Plug 'shime/vim-livedown', {'do': 'npm install -g livedown'}

@@ -40,3 +40,5 @@ alias vimconfig="vim ~/.vimrc"
 export PATH=/opt/loggi/ops/ansible/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 
+export KEYTIMEOUT=1
+

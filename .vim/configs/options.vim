@@ -7,6 +7,8 @@ set encoding=utf8
 set nowrap
 syntax on
 set backspace=indent,eol,start
+set splitright
+set splitbelow
 
 """"""""""""""""""""""""""""""
 " Show linenumbers
@@ -36,16 +38,13 @@ set cursorline
 """"""""""""""""""""""""""""""
 " Theme and Styling 
 """"""""""""""""""""""""""""""
-" seoul256 (dark):
-"   Range:   233 (darkest) ~ 239 (lightest)
-"   Default: 237
-let g:seoul256_background = 233
-colo seoul256
+colorscheme dracula
 
 """"""""""""""""""""""""""""""
 " NERDTree configs
 """"""""""""""""""""""""""""""
 let NERDTreeQuitOnOpen = 1
+let NERDTreeIgnore = ['\.pyc$']
 
 """"""""""""""""""""""""""""""
 " TagBar configs
@@ -53,9 +52,3 @@ let NERDTreeQuitOnOpen = 1
 let g:tagbar_autoclose = 1
 set tags=./tags,tags;$HOME
 
-""""""""""""""""""""""""""""""
-" ALELint options
-""""""""""""""""""""""""""""""
-let g:ale_linters = {
-\    'python' : ['pycodestyle']
-\}
