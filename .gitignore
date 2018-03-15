@@ -1,4 +1,6 @@
 # Ignore VIM plugins folder
 plugged
-**.swp
+*.swp
 tags
+*.sessions
+.sessions

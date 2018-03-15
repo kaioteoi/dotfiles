@@ -1,14 +1,16 @@
-""""""""""""""""""""""""""""""
+"'"""""""""""""""""""""""""""""
 " General configs
 """"""""""""""""""""""""""""""
+syntax on
+syntax enable
 set nofoldenable
 set nocompatible
 set encoding=utf8
 set nowrap
-syntax on
 set backspace=indent,eol,start
 set splitright
 set splitbelow
+set noswapfile
 
 """"""""""""""""""""""""""""""
 " Show linenumbers
@@ -38,7 +40,7 @@ set cursorline
 """"""""""""""""""""""""""""""
 " Theme and Styling 
 """"""""""""""""""""""""""""""
-colorscheme dracula
+colorscheme apprentice
 
 """"""""""""""""""""""""""""""
 " NERDTree configs
@@ -52,3 +54,9 @@ let NERDTreeIgnore = ['\.pyc$']
 let g:tagbar_autoclose = 1
 set tags=./tags,tags;$HOME
 
+""""""""""""""""""""""""""""""
+" Marvim configs
+""""""""""""""""""""""""""""""
+let g:marvim_find_key = '<C-m>f'
+let g:marvim_store_key = '<C-m>k'
+let g:marvim_prefix_on_load = 0

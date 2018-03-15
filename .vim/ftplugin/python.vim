@@ -20,8 +20,3 @@ set fileformat=unix
 let g:ale_linters = {
 \    'python' : ['pycodestyle']
 \}
-
-""""""""""""""""""""""""""""""
-" Pythonic mappings
-""""""""""""""""""""""""""""""
-nnoremap <Leader>pdb Oimport ipdb; ipdb.set_trace()<ESC>

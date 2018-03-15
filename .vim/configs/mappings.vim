@@ -2,28 +2,38 @@
 " Mappings configurationn
 """""""""""""""""""""""""""""""""""""
 " General
-nnoremap <Leader>vs :source ~/.vimrc<CR>
-nnoremap <Leader>cp "+y
+" * Clipboard *
+noremap <Leader>cp "+y
 nnoremap <Leader>cw viw"+y
+" * VIMRC *
+nnoremap <Leader>vs :source ~/.vimrc<CR>
+" * Custom functions *
+command! GenerateTags :call utils#run_ctags()
 nnoremap <Leader>tt :GenerateTags<CR>
+nnoremap <Leader>z :call utils#window_zoom()<CR>
+nmap <Leader>mtc :call utils#module_to_clipboard()<CR>:echo 'Module copied to clipboard!'<CR>
+" * Utilities *
 nnoremap <Leader>- :m-2<CR>
 nnoremap <Leader>_ :m+1<CR>
-nnoremap <Leader>z :call utils#window_zoom()<CR>
 nnoremap U :red<CR>
+nnoremap <C-l> gt
+nnoremap <C-h> gT
+nnoremap <Leader>t :Tags<CR>
 
 " Plugins
+" * NERDTree (
 nnoremap <C-f> :NERDTreeFind<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
+" * Tagbar *
 nnoremap <C-m> :TagbarToggle<CR>
+nnoremap <CR> <CR>
+" * FZF *
 nnoremap <C-p> :FZF<CR>
+" * Startify *
 nnoremap <Leader>ss :Startify<CR>
+" * GitGutter *
 nnoremap <Leader>hr :GitGutterUndoHunk<CR>
-nmap <Leader>mtc :call utils#module_to_clipboard()<CR>:echo 'Module copied to clipboard!'<CR>
 
-" Background calls
-"command! RunBackgroundCommand :utils#run_background_command()
-"command! -nargs=+ -complete=shellcmd RunBackgroundCommand call RunBackgroundCommand(<q-args>)
-command! GenerateTags :call utils#run_ctags()
-
-" Remap default mappings
+" Remap defaults
+" * tags -> jumps *
 nmap <C-]> g<C-]>

@@ -13,7 +13,7 @@ ZSH_THEME="af-magic"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git z tmux pip)
+plugins=(git z tmux pip virtualenv)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -34,6 +34,7 @@ export LANG=en_US.UTF-8
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias vimconfig="vim ~/.vimrc"
+alias kclip="xclip -sel cli <"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -41,4 +42,9 @@ export PATH=/opt/loggi/ops/ansible/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 
 export KEYTIMEOUT=1
+
+# Virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/Devel
+source $HOME/.local/bin/virtualenvwrapper.sh
 
