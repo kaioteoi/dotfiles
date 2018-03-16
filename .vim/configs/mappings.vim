@@ -12,6 +12,7 @@ command! GenerateTags :call utils#run_ctags()
 nnoremap <Leader>tt :GenerateTags<CR>
 nnoremap <Leader>z :call utils#window_zoom()<CR>
 nmap <Leader>mtc :call utils#module_to_clipboard()<CR>:echo 'Module copied to clipboard!'<CR>
+nnoremap <Leader>ptc :call utils#pytest_module_to_clipboard()<CR>:echo 'Pytest path copied to clipboard!'<CR>
 " * Utilities *
 nnoremap <Leader>- :m-2<CR>
 nnoremap <Leader>_ :m+1<CR>

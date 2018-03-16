@@ -19,6 +19,23 @@ endfunction
 
 
 """""""""""""""""""""""""""""""""""""""""
+" pTc - copy python module as pytest path
+"""""""""""""""""""""""""""""""""""""""""
+function! utils#pytest_module_to_clipboard()
+    let l:word=expand("<cword>")
+    let l:package=expand("%:r")
+
+    if l:word != ""
+        let l:path=l:package . " -k " . l:word . " -s"
+    else
+        let l:path=l:package
+    endif
+
+    let l:path=substitute(l:path, "/", ".", "g")
+    let @+=l:path
+endfunction
+
+"""""""""""""""""""""""""""""""""""""""""
 " cTags - refresh tags files
 """""""""""""""""""""""""""""""""""""""""
 function! utils#run_ctags()
@@ -60,4 +77,4 @@ autocmd BufWritePost $MYVIMRC source $MYVIMRC
 """""""""""""""""""""""""""""""""""""""""
 " Timeout between commands
 """""""""""""""""""""""""""""""""""""""""
-set ttimeoutlen = 10
+set ttimeoutlen=10
