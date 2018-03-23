@@ -57,6 +57,16 @@ set tags=./tags,tags;$HOME
 """"""""""""""""""""""""""""""
 " Marvim configs
 """"""""""""""""""""""""""""""
-let g:marvim_find_key = '<C-m>f'
-let g:marvim_store_key = '<C-m>k'
 let g:marvim_prefix_on_load = 0
+
+""""""""""""""""""""""""""""""
+" Ultisnips
+""""""""""""""""""""""""""""""
+let g:UltiSnipsExpandTrigger="<c-j>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+""""""""""""""""""""""""""""""
+" YCM
+""""""""""""""""""""""""""""""
+let g:ycm_python_binary_path = 'python'

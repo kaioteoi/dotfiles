@@ -15,6 +15,8 @@ Plug 'w0rp/ale'
 Plug 'easymotion/vim-easymotion'
 Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
 Plug 'tpope/vim-surround'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " Code readability
 Plug 'romainl/Apprentice'

@@ -26,8 +26,7 @@ nnoremap <Leader>t :Tags<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
 " * Tagbar *
-nnoremap <C-m> :TagbarToggle<CR>
-nnoremap <CR> <CR>
+nnoremap <F4> :TagbarToggle<CR>
 " * FZF *
 nnoremap <C-p> :FZF<CR>
 " * Startify *

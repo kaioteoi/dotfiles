@@ -18,5 +18,5 @@ set fileformat=unix
 " Plugin configs
 """"""""""""""""""""""""""""""
 let g:ale_linters = {
-\    'python' : ['pycodestyle']
+\    'python' : ['flake8']
 \}
