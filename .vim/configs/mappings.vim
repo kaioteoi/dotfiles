@@ -5,6 +5,7 @@
 " * Clipboard *
 noremap <Leader>cp "+y
 nnoremap <Leader>cw viw"+y
+vnoremap // y/<C-R>"<CR>
 " * VIMRC *
 nnoremap <Leader>vs :source ~/.vimrc<CR>
 " * Custom functions *
@@ -17,8 +18,6 @@ nnoremap <Leader>ptc :call utils#pytest_module_to_clipboard()<CR>:echo 'Pytest p
 nnoremap <Leader>- :m-2<CR>
 nnoremap <Leader>_ :m+1<CR>
 nnoremap U :red<CR>
-nnoremap <C-l> gt
-nnoremap <C-h> gT
 nnoremap <Leader>t :Tags<CR>
 
 " Plugins

@@ -4,6 +4,7 @@
 syntax on
 syntax enable
 set nofoldenable
+set foldmethod=indent
 set nocompatible
 set encoding=utf8
 set nowrap
