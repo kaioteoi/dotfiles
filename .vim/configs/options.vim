@@ -61,13 +61,6 @@ set tags=./tags,tags;$HOME
 let g:marvim_prefix_on_load = 0
 
 """"""""""""""""""""""""""""""
-" Ultisnips
-""""""""""""""""""""""""""""""
-let g:UltiSnipsExpandTrigger="<c-j>"
-let g:UltiSnipsJumpForwardTrigger="<c-j>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
-""""""""""""""""""""""""""""""
 " YCM
 """"""""""""""""""""""""""""""
 let g:ycm_python_binary_path = 'python'
@@ -81,9 +74,6 @@ map g/ <Plug>(incsearch-stay)
 map z/ <Plug>(incsearch-fuzzy-/)
 map z? <Plug>(incsearch-fuzzy-?)
 map zg/ <Plug>(incsearch-fuzzy-stay)
-map e/ <Plug>(incsearch-easymotion-/)
-map e? <Plug>(incsearch-easymotion-?)
-map eg/ <Plug>(incsearch-easymotion-stay)
 
 " incsearch.vim x fuzzy x vim-easymotion
 

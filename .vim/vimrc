@@ -1,9 +1,12 @@
+let $MYVIMFOLDER = $HOME . '/.vim'
+let $MYVIMCONFIGS = $MYVIMFOLDER . '/configs'
+
 """""""""""""""""""""""""""""""""""""
 " Plugins first
 """""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
-source ~/.vim/configs/plugins.vim
+source $MYVIMCONFIGS/plugins.vim
 
 filetype plugin indent on    " required
 
@@ -12,10 +15,14 @@ call plug#end()              " required
 """""""""""""""""""""""""""""""""""""
 " Configuration Section
 """""""""""""""""""""""""""""""""""""
-source ~/.vim/configs/options.vim
+source $MYVIMCONFIGS/options.vim
 
 """""""""""""""""""""""""""""""""""""
 " Mappings configurationn
 """""""""""""""""""""""""""""""""""""
-source ~/.vim/configs/mappings.vim
+source $MYVIMCONFIGS/mappings.vim
 
+"""""""""""""""""""""""""""""""""""""""""
+" Autosource on VIMRC write
+"""""""""""""""""""""""""""""""""""""""""
+autocmd BufWritePost $MYVIMCONFIGS/*,$MYVIMRC source $MYVIMRC

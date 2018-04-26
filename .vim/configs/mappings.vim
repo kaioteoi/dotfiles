@@ -1,38 +1,48 @@
 """""""""""""""""""""""""""""""""""""
-" Mappings configurationn
-"""""""""""""""""""""""""""""""""""""
-" General
 " * Clipboard *
+"""""""""""""""""""""""""""""""""""""
 noremap <Leader>cp "+y
 nnoremap <Leader>cw viw"+y
 vnoremap // y/<C-R>"<CR>
-" * VIMRC *
+
+"""""""""""""""""""""""""""""""""""""
+" VIMRC
+"""""""""""""""""""""""""""""""""""""
 nnoremap <Leader>vs :source ~/.vimrc<CR>
-" * Custom functions *
+
+"""""""""""""""""""""""""""""""""""""
+" Custom functions
+"""""""""""""""""""""""""""""""""""""
 command! GenerateTags :call utils#run_ctags()
 nnoremap <Leader>tt :GenerateTags<CR>
 nnoremap <Leader>z :call utils#window_zoom()<CR>
-nmap <Leader>mtc :call utils#module_to_clipboard()<CR>:echo 'Module copied to clipboard!'<CR>
-nnoremap <Leader>ptc :call utils#pytest_module_to_clipboard()<CR>:echo 'Pytest path copied to clipboard!'<CR>
-" * Utilities *
+
+"""""""""""""""""""""""""""""""""""""
+" Utilities
+"""""""""""""""""""""""""""""""""""""
 nnoremap <Leader>- :m-2<CR>
 nnoremap <Leader>_ :m+1<CR>
 nnoremap U :red<CR>
-nnoremap <Leader>t :Tags<CR>
 
+"""""""""""""""""""""""""""""""""""""
 " Plugins
-" * NERDTree (
+"""""""""""""""""""""""""""""""""""""
+" Ctags
+nnoremap <F5> :Tags<CR>
+" NERDTree
 nnoremap <C-f> :NERDTreeFind<CR>
 nnoremap <C-n> :NERDTreeToggle<CR>
-" * Tagbar *
+" Tagbar
 nnoremap <F4> :TagbarToggle<CR>
-" * FZF *
+" FZF
 nnoremap <C-p> :FZF<CR>
-" * Startify *
+" Startify
 nnoremap <Leader>ss :Startify<CR>
-" * GitGutter *
+" GitGutter
 nnoremap <Leader>hr :GitGutterUndoHunk<CR>
 
+"""""""""""""""""""""""""""""""""""""
 " Remap defaults
-" * tags -> jumps *
+"""""""""""""""""""""""""""""""""""""
+" tags -> jumps
 nmap <C-]> g<C-]>
