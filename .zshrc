@@ -13,7 +13,7 @@ ZSH_THEME="af-magic"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git z tmux pip virtualenv)
+plugins=(git z tmux pip virtualenv taskwarrior)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -35,6 +35,7 @@ alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias vimconfig="vim ~/.vimrc"
 alias kclip="xclip -sel cli <"
+alias gdestroy="gsta -u && gstd"
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
@@ -47,3 +48,4 @@ export KEYTIMEOUT=1
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 source $HOME/.local/bin/virtualenvwrapper.sh
+source $HOME/.local/bin/aws_zsh_completer.sh

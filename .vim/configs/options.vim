@@ -88,3 +88,12 @@ function! s:config_easyfuzzymotion(...) abort
 endfunction
 
 noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
+
+
+""""""""""""""""""""""""""""""
+" Vim Sessions
+""""""""""""""""""""""""""""""
+let g:session_autoload = 'no'
+let g:session_autosave = 'no'
+
+command! PrettyXML call utils#do_pretty_xml()

@@ -1,8 +1,9 @@
 """""""""""""""""""""""""""""""""""""
 " * Clipboard *
 """""""""""""""""""""""""""""""""""""
-noremap <Leader>cp "+y
-nnoremap <Leader>cw viw"+y
+noremap <Leader>cp "+y:echo 'selection copied!'<CR>
+noremap <Leader>cl <Esc>0v$h"+y:echo 'line copied!'<CR>
+nnoremap <Leader>cw viw"+y:echo 'word copied!'<CR>
 vnoremap // y/<C-R>"<CR>
 
 """""""""""""""""""""""""""""""""""""
@@ -20,26 +21,26 @@ nnoremap <Leader>z :call utils#window_zoom()<CR>
 """""""""""""""""""""""""""""""""""""
 " Utilities
 """""""""""""""""""""""""""""""""""""
+" Move line up/down
 nnoremap <Leader>- :m-2<CR>
 nnoremap <Leader>_ :m+1<CR>
+" Redo
 nnoremap U :red<CR>
+" Replace on visual selection
+vnoremap <C-R> :s/\%V
 
 """""""""""""""""""""""""""""""""""""
 " Plugins
 """""""""""""""""""""""""""""""""""""
 " Ctags
-nnoremap <F5> :Tags<CR>
-" NERDTree
-nnoremap <C-f> :NERDTreeFind<CR>
-nnoremap <C-n> :NERDTreeToggle<CR>
-" Tagbar
-nnoremap <F4> :TagbarToggle<CR>
+nnoremap ,, :Tags<CR>
 " FZF
-nnoremap <C-p> :FZF<CR>
-" Startify
-nnoremap <Leader>ss :Startify<CR>
-" GitGutter
-nnoremap <Leader>hr :GitGutterUndoHunk<CR>
+nnoremap ,. :FZF<CR>
+" NERDTree
+nnoremap ,n :NERDTreeFind<CR>
+nnoremap ,m :NERDTreeToggle<CR>
+" Tagbar
+nnoremap ,t :TagbarToggle<CR>
 
 """""""""""""""""""""""""""""""""""""
 " Remap defaults

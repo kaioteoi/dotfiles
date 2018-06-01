@@ -7,6 +7,8 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'gabesoft/vim-ags'
 Plug 'scrooloose/nerdcommenter'
+Plug 'xolox/vim-misc'
+Plug 'xolox/vim-session'
 
 "'"""""""""""""""""""""""""""""
 " Macros
