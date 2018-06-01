@@ -1,7 +1,7 @@
 ZSH_TMUX_AUTOSTART=true
 
 # Path to your oh-my-zsh installation.
-export ZSH=/home/kaioteoi/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Theme name
 ZSH_THEME="af-magic"
