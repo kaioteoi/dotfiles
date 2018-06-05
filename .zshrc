@@ -3,6 +3,11 @@ ZSH_TMUX_AUTOSTART=true
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
+# Gentoo autocomplets
+autoload -U compinit promptinit
+compinit
+promptinit; prompt gentoo
+
 # Theme name
 ZSH_THEME="af-magic"
 
@@ -42,10 +47,12 @@ alias gdestroy="gsta -u && gstd"
 export PATH=/opt/loggi/ops/ansible/bin:$PATH
 export PATH=$HOME/.local/bin:$PATH
 
-export KEYTIMEOUT=1
+# 10ms for key sequences
+KEYTIMEOUT=1
 
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
 source $HOME/.local/bin/virtualenvwrapper.sh
 source $HOME/.local/bin/aws_zsh_completer.sh
+export PATH=$PATH:/usr/sbin

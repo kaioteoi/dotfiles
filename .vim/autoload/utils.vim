@@ -35,7 +35,7 @@ endfunction
 """""""""""""""""""""""""""""""""""""""""
 " Timeout between commands
 """""""""""""""""""""""""""""""""""""""""
-set ttimeoutlen=10
+set timeoutlen=1000 ttimeoutlen=0
 
 """""""""""""""""""""""""""""""""""""""""
 " PrettyXml
