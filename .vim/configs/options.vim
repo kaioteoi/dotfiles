@@ -41,13 +41,15 @@ set cursorline
 """"""""""""""""""""""""""""""
 " Theme and Styling 
 """"""""""""""""""""""""""""""
-colorscheme apprentice
+set background=dark
+colorscheme codedark
+let g:airline_theme = 'codedark'
 
 """"""""""""""""""""""""""""""
 " NERDTree configs
 """"""""""""""""""""""""""""""
 let NERDTreeQuitOnOpen = 1
-let NERDTreeIgnore = ['\.pyc$']
+let NERDTreeIgnore = ['\.pyc$', '__pycache__']
 
 """"""""""""""""""""""""""""""
 " TagBar configs
