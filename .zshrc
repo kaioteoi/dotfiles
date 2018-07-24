@@ -47,7 +47,9 @@ KEYTIMEOUT=1
 
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
 source $HOME/.local/bin/virtualenvwrapper.sh
 source $HOME/.local/bin/aws_zsh_completer.sh
 export PATH=$PATH:/usr/sbin
+
+# Hook for desk activation
+[ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
