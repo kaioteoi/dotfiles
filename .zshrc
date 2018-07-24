@@ -3,11 +3,6 @@ ZSH_TMUX_AUTOSTART=true
 # Path to your oh-my-zsh installation.
 export ZSH=$HOME/.oh-my-zsh
 
-# Gentoo autocomplets
-autoload -U compinit promptinit
-compinit
-promptinit; prompt gentoo
-
 # Theme name
 ZSH_THEME="af-magic"
 
