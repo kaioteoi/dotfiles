@@ -6,4 +6,7 @@ tags
 *.sessions
 .sessions
 *sessions*
-*netrwhist*
+**/*.netrwhist
+*.netrwhist
+.vim/vimrc
+.vim/.netrwhist

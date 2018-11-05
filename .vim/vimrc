@@ -1,4 +1,6 @@
+""""""""""""""""""""""""""""""""""""""""
 " kr4nd0m's vimrc
+""""""""""""""""""""""""""""""""""""""""
 set encoding=utf-8
 scriptencoding utf-8
 
@@ -12,27 +14,34 @@ if empty(glob('~/.vim/autoload/plug.vim'))
         autocmd VimEnter * PlugInstall
     augroup END
 endif
+""""""""""""""""""""""""""""""""""""""""
+" }}}
+""""""""""""""""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""""""""""""
 " Plugins {{{
-
+""""""""""""""""""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
-
+" FZF
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
     nnoremap ,. :FZF<CR>
 
+" Vim Ags
 Plug 'gabesoft/vim-ags'
     let g:ags_winheight = '20'
+    nnoremap <C-F> :Ags<Space>
 
+" Tagbar
 Plug 'majutsushi/tagbar'
     let g:tagbar_autoclose = 1
     set tags=./tags,tags;$HOME
     nnoremap ,, :Tags<CR>
     nnoremap ,t :TagbarToggle<CR>
-    command! GenerateTags :call utils#run_ctags()
     nnoremap <Leader>tt :GenerateTags<CR>
 
+" Nerdtools
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
     nnoremap ,n :NERDTreeFind<CR>
@@ -60,44 +69,30 @@ Plug 'scrooloose/nerdtree'
 	call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
 	call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
+" Linters (ALE, YCM)
 Plug 'w0rp/ale'
-Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
-    let g:ycm_python_binary_path = 'python'
+"Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
+    "let g:ycm_python_binary_path = 'python'
 
+" Easy motion/search
 Plug 'easymotion/vim-easymotion'
-Plug 'haya14busa/incsearch.vim'
-	map /  <Plug>(incsearch-forward)
-	map ?  <Plug>(incsearch-backward)
-	map g/ <Plug>(incsearch-stay)
-	map z/ <Plug>(incsearch-fuzzy-/)
-	map z? <Plug>(incsearch-fuzzy-?)
-	map zg/ <Plug>(incsearch-fuzzy-stay)
 
-	" incsearch.vim x fuzzy x vim-easymotion
-
-	function! s:config_easyfuzzymotion(...) abort
-	  return extend(copy({
-		\   'converters': [incsearch#config#fuzzy#converter()],
-		\   'modules': [incsearch#config#easymotion#module()],
-		\   'keymap': {"\<CR>": '<Over>(easymotion)'},
-		\   'is_expr': 0,
-		\   'is_stay': 1
-		\ }), get(a:, 1, {}))
-	endfunction
-
-	noremap <silent><expr> <Space>/ incsearch#go(<SID>config_easyfuzzymotion())
-
+" Vim session
 Plug 'xolox/vim-misc' " Dependency for vim-session
 Plug 'xolox/vim-session'
     let g:session_autoload = 'no'
     let g:session_autosave = 'no'
 
+" Macro management
 Plug 'fakeezz/marvim'
     let g:marvim_prefix_on_load = 0
 
+" Visual
 Plug 'junegunn/seoul256.vim'
     let g:seoul256_background = 238
     colo seoul256
+Plug 'vim-airline/vim-airline'
+Plug 'ryanoasis/vim-devicons'
 
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
@@ -105,18 +100,38 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
     vmap s <Plug>VSurround
     nmap ys <Plug>Ysurroundw
-
-Plug 'vim-airline/vim-airline'
 Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors'
-Plug 'ryanoasis/vim-devicons'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'iamcco/markdown-preview.vim'
 
+" Ctags improved
+Plug 'jsfaint/gen_tags.vim'
+    let g:gen_tags#statusline = 1
+    let g:gen_tags#ctags_auto_gen = 1
+    let g:gen_tags#ctags_opts = [
+        \ "--python-kinds=+cfm-x",
+        \ "--exclude='node_modules'"
+    \ ]
+    let g:gen_tags#use_cache_dir = 0
+
+" Magit!!!
+Plug 'jreybert/vimagit'
+    nnoremap <C-Q> :Magit<CR>
+
+" Window navigation
+Plug 't9md/vim-choosewin'
+    nmap - <Plug>(choosewin)
+
 filetype plugin indent on
 call plug#end()
+""""""""""""""""""""""""""""""""""""""""
+" }}}
+""""""""""""""""""""""""""""""""""""""""
 
-" General configs
+""""""""""""""""""""""""""""""""""""""""
+" General configs {{{
+""""""""""""""""""""""""""""""""""""""""
 syntax on
 syntax enable
 set nofoldenable
@@ -137,7 +152,18 @@ set smarttab
 set expandtab
 set laststatus=2
 set cursorline
+set ignorecase
+set autoread
+set pastetoggle=<C-P>
+set incsearch
 
+""""""""""""""""""""""""""""""""""""""""
+" }}}
+""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""
+" #Mappings/Functions {{{
+""""""""""""""""""""""""""""""""""""""""
 command! PrettyXML call utils#do_pretty_xml()
 
 noremap <Leader>cp "+y:echo 'selection copied!'<CR>
@@ -161,3 +187,7 @@ vnoremap <C-R> :s/\%V
 
 " tags -> jumps
 nnoremap <C-]> <Esc>:exe "tjump " . expand("<cword>")<Esc>
+
+""""""""""""""""""""""""""""""""""""""""
+" }}}
+""""""""""""""""""""""""""""""""""""""""
