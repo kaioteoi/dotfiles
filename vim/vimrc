@@ -41,6 +41,7 @@ Plug 'majutsushi/tagbar'
     nnoremap ,t :TagbarToggle<CR>
     nnoremap <Leader>tt :GenerateTags<CR>
 
+
 " Nerdtools
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree'
@@ -69,19 +70,20 @@ Plug 'scrooloose/nerdtree'
 	call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
 	call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
-" Linters (ALE, YCM)
+" ALE Lint
 Plug 'w0rp/ale'
-"Plug 'Valloric/YouCompleteMe', {'do': './install.py'}
-    "let g:ycm_python_binary_path = 'python'
+    let g:ale_sign_warning = '.'
+    let g:ale_lint_on_enter = 0
 
-" Easy motion/search
+" easymotion
 Plug 'easymotion/vim-easymotion'
 
 " Vim session
-Plug 'xolox/vim-misc' " Dependency for vim-session
+Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
-    let g:session_autoload = 'no'
-    let g:session_autosave = 'no'
+    let g:session_directory = $HOME.'/.vim/sessions/'
+    let g:session_command_aliases = 1
+    let g:session_autosave = 'yes'
 
 " Macro management
 Plug 'fakeezz/marvim'
@@ -90,15 +92,19 @@ Plug 'fakeezz/marvim'
 " Visual
 Plug 'junegunn/seoul256.vim'
     let g:seoul256_background = 238
-    colo seoul256
+
+" Vim Airline
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+    let g:airline_theme='bubblegum'
+
 Plug 'ryanoasis/vim-devicons'
 
+" Chore
 Plug 'tpope/vim-eunuch'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
-    vmap s <Plug>VSurround
     nmap ys <Plug>Ysurroundw
 Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors'
@@ -111,20 +117,38 @@ Plug 'jsfaint/gen_tags.vim'
     let g:gen_tags#ctags_auto_gen = 1
     let g:gen_tags#ctags_opts = [
         \ "--python-kinds=+cfm-x",
-        \ "--exclude='node_modules'"
+        \ "--exclude=['node_modules', '__pycache__']",
+        \ "--append=no"
     \ ]
     let g:gen_tags#use_cache_dir = 0
-
-" Magit!!!
-Plug 'jreybert/vimagit'
-    nnoremap <C-Q> :Magit<CR>
 
 " Window navigation
 Plug 't9md/vim-choosewin'
     nmap - <Plug>(choosewin)
 
+
+""""""""""""""""""""""""""""""""""""""""
+" Language specific
+""""""""""""""""""""""""""""""""""""""""
+" Javascript
+Plug 'pangloss/vim-javascript', {'for': ['javascript', 'js']}
+" JSX
+Plug 'mxw/vim-jsx', {'for': 'jsx'}
+" Python
+Plug 'jeetsukumaran/vim-pythonsense', {'for': 'python'}
+" >> Ruby
+Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
+Plug 'ngmy/vim-rubocop', {'for': 'ruby'}
+
 filetype plugin indent on
 call plug#end()
+
+""""""""""""""""""""""""""""""""""""""""
+" Post plugin loading configs
+""""""""""""""""""""""""""""""""""""""""
+" Colorscheme
+colorscheme seoul256
+
 """"""""""""""""""""""""""""""""""""""""
 " }}}
 """"""""""""""""""""""""""""""""""""""""
@@ -156,6 +180,9 @@ set ignorecase
 set autoread
 set pastetoggle=<C-P>
 set incsearch
+set redrawtime=10000
+set timeoutlen=1000
+set ttimeoutlen=0
 
 """"""""""""""""""""""""""""""""""""""""
 " }}}

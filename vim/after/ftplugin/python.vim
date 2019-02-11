@@ -48,7 +48,7 @@ function! PytestPtwToClipboard()
     let l:package=expand("%:r")
 
     if l:word != ""
-        let l:path=l:package . " -k " . l:word . " -s"
+        let l:path=l:package . " -k " . l:word . " -s --reuse-db"
     else
         let l:path=l:package
     endif
@@ -104,7 +104,7 @@ set fileformat=unix
 " Plugin configs
 """"""""""""""""""""""""""""""
 let g:ale_linters = {
-\    'python' : ['pycodestyle', 'flake8']
+\    'python' : ['flake8']
 \}
 
 """"""""""""""""""""""""""""""
