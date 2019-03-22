@@ -91,7 +91,7 @@ Plug 'fakeezz/marvim'
 
 " Visual
 Plug 'junegunn/seoul256.vim'
-    let g:seoul256_background = 238
+    let g:seoul256_background = 236
 
 " Vim Airline
 Plug 'vim-airline/vim-airline'
