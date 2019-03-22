@@ -84,6 +84,7 @@ Plug 'xolox/vim-session'
     let g:session_directory = $HOME.'/.vim/sessions/'
     let g:session_command_aliases = 1
     let g:session_autosave = 'yes'
+    let g:session_autoload = 'yes'
 
 " Macro management
 Plug 'fakeezz/marvim'
