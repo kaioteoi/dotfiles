@@ -127,6 +127,13 @@ Plug 'jsfaint/gen_tags.vim'
 Plug 't9md/vim-choosewin'
     nmap - <Plug>(choosewin)
 
+" Snippets
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+    let g:UltiSnipsExpandTrigger="<tab>"
+    let g:UltiSnipsJumpBackwardTrigger="<c-c>"
+    let g:UltiSnipsJumpForwardTrigger="<c-b>"
+
 
 """"""""""""""""""""""""""""""""""""""""
 " Language specific
