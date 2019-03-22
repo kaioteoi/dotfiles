@@ -4,7 +4,7 @@ ZSH_TMUX_AUTOSTART=true
 export ZSH=$HOME/.oh-my-zsh
 
 # Theme name
-ZSH_THEME="af-magic"
+ZSH_THEME="kphoen"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -47,17 +47,10 @@ KEYTIMEOUT=1
 
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
-source $HOME/.local/bin/virtualenvwrapper.sh
-source $HOME/.local/bin/aws_zsh_completer.sh
 export PATH=$PATH:/usr/sbin
 
 # Hook for desk activation
 [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
-
-# Pyenv configs
-export PATH=$PATH:$HOME/.pyenv/bin
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
