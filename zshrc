@@ -13,7 +13,7 @@ ZSH_THEME="kphoen"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-plugins=(git z tmux pip virtualenv desk docker-compose rust cargo ruby flake8)
+plugins=(git z tmux pip virtualenv docker-compose rust cargo ruby)
 
 source $ZSH/oh-my-zsh.sh
 

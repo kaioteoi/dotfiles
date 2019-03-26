@@ -31,6 +31,21 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " Vim Ags
 Plug 'gabesoft/vim-ags'
     let g:ags_winheight = '20'
+    let g:ags_agargs = {
+    \ '--ignore'            : [ '{south_migrations,migrations}', '-i' ],
+    \ '--break'             : [ '', '' ],
+    \ '--color'             : [ '', '' ],
+    \ '--color-line-number' : [ '"1;30"', '' ],
+    \ '--color-match'       : [ '"32;40"', '' ],
+    \ '--color-path'        : [ '"1;31"', '' ],
+    \ '--column'            : [ '', '' ],
+    \ '--context'           : [ 'g:ags_agcontext', '-C' ],
+    \ '--filename'          : [ '', '' ],
+    \ '--group'             : [ '', '' ],
+    \ '--heading'           : [ '', '-H' ],
+    \ '--max-count'         : [ 'g:ags_agmaxcount', '-m' ],
+    \ '--numbers'           : [ '', '' ]
+    \ }
     nnoremap <C-F> :Ags<Space>
 
 " Tagbar
@@ -222,6 +237,9 @@ vnoremap <C-R> :s/\%V
 
 " tags -> jumps
 nnoremap <C-]> <Esc>:exe "tjump " . expand("<cword>")<Esc>
+
+" jump splitting vertical
+nnoremap <C-W>] <C-W>v<C-]>
 
 """"""""""""""""""""""""""""""""""""""""
 " }}}
