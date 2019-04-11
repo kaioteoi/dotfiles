@@ -106,13 +106,12 @@ Plug 'fakeezz/marvim'
     let g:marvim_prefix_on_load = 0
 
 " Visual
-Plug 'junegunn/seoul256.vim'
-    let g:seoul256_background = 236
+Plug 'jdsimcoe/abstract.vim'
 
 " Vim Airline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-    let g:airline_theme='bubblegum'
+    let g:airline_theme='abstract'
 
 Plug 'ryanoasis/vim-devicons'
 
@@ -170,7 +169,7 @@ call plug#end()
 " Post plugin loading configs
 """"""""""""""""""""""""""""""""""""""""
 " Colorscheme
-colorscheme seoul256
+colorscheme abstract
 
 """"""""""""""""""""""""""""""""""""""""
 " }}}
