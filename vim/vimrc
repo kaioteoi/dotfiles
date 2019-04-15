@@ -212,7 +212,6 @@ set shiftwidth=4
 set smarttab
 set expandtab
 set laststatus=2
-set cursorline
 set ignorecase
 set autoread
 set pastetoggle=<C-P>
