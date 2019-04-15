@@ -152,6 +152,15 @@ Plug 'honza/vim-snippets'
     let g:UltiSnipsJumpForwardTrigger="<c-b>"
 
 
+" Autocompletion
+" Deoplete
+Plug 'Shougo/deoplete.nvim'
+    let g:deoplete#enable_at_startup = 1
+
+    " Dependencies
+    Plug 'roxma/nvim-yarp'
+    Plug 'roxma/vim-hug-neovim-rpc'
+
 """"""""""""""""""""""""""""""""""""""""
 " Language specific
 """"""""""""""""""""""""""""""""""""""""
@@ -173,6 +182,9 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""
 " Colorscheme
 colorscheme abstract
+
+" Deoplete
+call deoplete#custom#option('max_list', 5)
 
 """"""""""""""""""""""""""""""""""""""""
 " }}}
