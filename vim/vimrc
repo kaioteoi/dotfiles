@@ -93,7 +93,7 @@ Plug 'w0rp/ale'
 " easymotion
 Plug 'easymotion/vim-easymotion'
     map <Leader> <Plug>(easymotion-prefix)
-    map  <Plug>(easymotion-prefix)w <Plug>(easymotion-bd-w)
+    map <Plug>(easymotion-prefix)w <Plug>(easymotion-bd-w)
     map <Plug>(easymotion-prefix)e <Plug>(easymotion-bd-e)
 
 " Vim session
@@ -201,7 +201,6 @@ set nofoldenable
 set foldmethod=indent
 set nocompatible
 set encoding=utf8
-set nowrap
 set backspace=indent,eol,start
 set splitright
 set splitbelow
@@ -221,6 +220,7 @@ set incsearch
 set redrawtime=10000
 set timeoutlen=1000
 set ttimeoutlen=0
+set scrolloff=5
 
 """"""""""""""""""""""""""""""""""""""""
 " }}}

@@ -54,6 +54,7 @@ export WORKON_HOME=$HOME/.virtualenvs
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+# Oh MY ZSH!
 source $ZSH/oh-my-zsh.sh
 
 ########################################
@@ -73,3 +74,12 @@ export NVM_DIR="$HOME/.nvm"
 # History search bind
 bindkey "^P" up-line-or-search
 bindkey "^N" down-line-or-search
+
+########################################
+# Android configs
+########################################
+export ANDROID_HOME=$HOME/Android/Sdk
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export PATH=$PATH:$ANDROID_HOME/emulator

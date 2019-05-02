@@ -33,9 +33,9 @@ function! PytestToClipboard()
         let l:path=l:package
     endif
 
-    let l:full_path="loggi test -vv " . l:path
-    let l:full_path=substitute(l:path, "/", ".", "g")
-    let @+=l:full_path
+    let l:path="loggi test -vv " . l:path
+    let l:path=substitute(l:path, "/", ".", "g")
+    let @+=l:path
 endfunction
 
 
