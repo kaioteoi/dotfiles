@@ -7,19 +7,20 @@ ZSH_TMUX_AUTOSTART=true
 # oh-my-zsh
 ########################################
 export ZSH=$HOME/.oh-my-zsh
-source $ZSH/oh-my-zsh.sh
 
 ########################################
 # Theme
 ########################################
 ZSH_THEME="spaceship"
+# Spaceship specific options
+[ -s $HOME/.spaceshiprc ] && source $HOME/.spaceshiprc
 
 ########################################
 # Plugins
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 ########################################
-plugins=(git z tmux pip virtualenv docker-compose rust cargo ruby)
+plugins=(git z tmux pip virtualenv docker-compose ruby)
 
 
 ########################################
@@ -30,11 +31,12 @@ plugins=(git z tmux pip virtualenv docker-compose rust cargo ruby)
 ########################################
 # Aliases
 ########################################
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
-alias vimconfig="vim ~/.vimrc"
+alias zshrc="vim ~/.zshrc"
+alias vimrc="vim ~/.vimrc"
+alias spaceshiprc="vim ~/.spaceshiprc"
 alias kclip="xclip -sel cli <"
 alias gdestroy="gsta -u && gstd"
+alias s=source
 
 ########################################
 # General exports and sources
@@ -52,6 +54,8 @@ export WORKON_HOME=$HOME/.virtualenvs
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+source $ZSH/oh-my-zsh.sh
+
 ########################################
 # General configs
 ########################################
@@ -65,3 +69,7 @@ KEYTIMEOUT=1
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# History search bind
+bindkey "^P" up-line-or-search
+bindkey "^N" down-line-or-search
