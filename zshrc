@@ -4,11 +4,6 @@
 ZSH_TMUX_AUTOSTART=true
 
 ########################################
-# oh-my-zsh
-########################################
-export ZSH=$HOME/.oh-my-zsh
-
-########################################
 # Theme
 ########################################
 ZSH_THEME="spaceship"
@@ -22,11 +17,10 @@ ZSH_THEME="spaceship"
 ########################################
 plugins=(git z tmux pip virtualenv docker-compose ruby)
 
-
 ########################################
 # ssh
 ########################################
-# export SSH_KEY_PATH="~/.ssh/rsa_id"
+ export SSH_KEY_PATH="~/.ssh/keygo"
 
 ########################################
 # Aliases
@@ -51,11 +45,14 @@ export PATH=/opt/loggi/ops/ansible/bin:$PATH
 # Virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 
+########################################
+# oh-my-zsh
+########################################
+export ZSH=~/.oh-my-zsh
+source $ZSH/oh-my-zsh.sh
+
 # FZF
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
-# Oh MY ZSH!
-source $ZSH/oh-my-zsh.sh
 
 ########################################
 # General configs
@@ -68,6 +65,7 @@ KEYTIMEOUT=1
 
 # Node version manager (NVM)
 export NVM_DIR="$HOME/.nvm"
+source /usr/local/opt/nvm/nvm.sh
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
