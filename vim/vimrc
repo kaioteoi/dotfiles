@@ -102,7 +102,7 @@ Plug 'xolox/vim-session'
     let g:session_directory = $HOME.'/.vim/sessions/'
     let g:session_command_aliases = 1
     let g:session_autosave = 'yes'
-    let g:session_autoload = 'yes'
+    let g:session_autoload = 'no'
 
 " Macro management
 Plug 'fakeezz/marvim'
@@ -115,6 +115,10 @@ Plug 'jdsimcoe/abstract.vim'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
     let g:airline_theme='abstract'
+    let g:airline#extensions#tabline#show_buffers = 0
+    let g:airline#extensions#tabline#buffer_nr_show = 1
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#show_close_button = 0
 
 Plug 'ryanoasis/vim-devicons'
 
@@ -128,6 +132,7 @@ Plug 'airblade/vim-gitgutter'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'iamcco/markdown-preview.vim'
+Plug 'schickling/vim-bufonly'
 
 " Ctags improved
 Plug 'jsfaint/gen_tags.vim'
@@ -166,8 +171,6 @@ Plug 'Shougo/deoplete.nvim'
 """"""""""""""""""""""""""""""""""""""""
 " Javascript
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'js']}
-" JSX
-Plug 'mxw/vim-jsx', {'for': 'jsx'}
 " Python
 Plug 'jeetsukumaran/vim-pythonsense', {'for': 'python'}
 " Ruby
@@ -187,6 +190,7 @@ colorscheme abstract
 
 " Deoplete
 call deoplete#custom#option('max_list', 5)
+
 
 """"""""""""""""""""""""""""""""""""""""
 " }}}

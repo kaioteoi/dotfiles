@@ -15,7 +15,7 @@ ZSH_THEME="spaceship"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 ########################################
-plugins=(git z tmux pip virtualenv docker-compose ruby)
+plugins=(git z tmux pip virtualenv docker-compose ruby zsh-syntax-highlighting)
 
 ########################################
 # ssh
@@ -31,6 +31,7 @@ alias spaceshiprc="vim ~/.spaceshiprc"
 alias kclip="xclip -sel cli <"
 alias gdestroy="gsta -u && gstd"
 alias s=source
+alias gri="git rebase -i (git rev-parse origin/master)"
 
 ########################################
 # General exports and sources
@@ -65,9 +66,10 @@ KEYTIMEOUT=1
 
 # Node version manager (NVM)
 export NVM_DIR="$HOME/.nvm"
-source /usr/local/opt/nvm/nvm.sh
+#[ -s "/usr/local/opt/nvm/nvm.sh"] && \. "/usr/local/opt/nvm/nvm.sh"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+nvm use lts/carbon
 
 # History search bind
 bindkey "^P" up-line-or-search
