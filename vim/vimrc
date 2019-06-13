@@ -134,17 +134,6 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'schickling/vim-bufonly'
 
-" Ctags improved
-Plug 'jsfaint/gen_tags.vim'
-    let g:gen_tags#statusline = 1
-    let g:gen_tags#ctags_auto_gen = 1
-    let g:gen_tags#ctags_opts = [
-        \ "--python-kinds=+cfm-x",
-        \ "--exclude=['node_modules', '__pycache__']",
-        \ "--append=no"
-    \ ]
-    let g:gen_tags#use_cache_dir = 0
-
 " Window navigation
 Plug 't9md/vim-choosewin'
     nmap - <Plug>(choosewin)

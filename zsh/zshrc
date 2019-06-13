@@ -1,26 +1,19 @@
 ########################################
-# Tmux-zsh options
-########################################
-ZSH_TMUX_AUTOSTART=true
-
-########################################
 # Theme
 ########################################
-ZSH_THEME="spaceship"
-# Spaceship specific options
-[ -s $HOME/.spaceshiprc ] && source $HOME/.spaceshiprc
+ZSH_THEME=powerlevel10k/powerlevel10k
 
 ########################################
 # Plugins
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 ########################################
-plugins=(git z tmux pip virtualenv docker-compose ruby zsh-syntax-highlighting)
+plugins=(git z pip virtualenv docker-compose ruby zsh-syntax-highlighting)
 
 ########################################
 # ssh
 ########################################
- export SSH_KEY_PATH="~/.ssh/keygo"
+export SSH_KEY_PATH="~/.ssh/keygo"
 
 ########################################
 # Aliases
@@ -69,7 +62,6 @@ export NVM_DIR="$HOME/.nvm"
 #[ -s "/usr/local/opt/nvm/nvm.sh"] && \. "/usr/local/opt/nvm/nvm.sh"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-nvm use lts/carbon
 
 # History search bind
 bindkey "^P" up-line-or-search
@@ -83,3 +75,5 @@ export PATH=$PATH:$ANDROID_HOME/tools
 export PATH=$PATH:$ANDROID_HOME/tools/bin
 export PATH=$PATH:$ANDROID_HOME/platform-tools
 export PATH=$PATH:$ANDROID_HOME/emulator
+
+source ~/.power
