@@ -25,37 +25,28 @@ call plug#begin('~/.vim/plugged')
 
 " FZF
 Plug 'junegunn/fzf.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+    let g:fzf_command_prefix = 'Fzf'
+    nnoremap ,, :FzfTags<CR>
     nnoremap ,. :FZF<CR>
+    nnoremap ,b :FzfBuffers<CR>
+    nnoremap <C-F> :FzfAg<CR>
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 
-" Vim Ags
-Plug 'gabesoft/vim-ags'
-    let g:ags_winheight = '20'
-    let g:ags_agargs = {
-    \ '--ignore'            : [ '{south_migrations,migrations}', '-i' ],
-    \ '--break'             : [ '', '' ],
-    \ '--color'             : [ '', '' ],
-    \ '--color-line-number' : [ '"1;30"', '' ],
-    \ '--color-match'       : [ '"32;40"', '' ],
-    \ '--color-path'        : [ '"1;31"', '' ],
-    \ '--column'            : [ '', '' ],
-    \ '--context'           : [ 'g:ags_agcontext', '-C' ],
-    \ '--filename'          : [ '', '' ],
-    \ '--group'             : [ '', '' ],
-    \ '--heading'           : [ '', '-H' ],
-    \ '--max-count'         : [ 'g:ags_agmaxcount', '-m' ],
-    \ '--numbers'           : [ '', '' ]
-    \ }
-    nnoremap <C-F> :Ags<Space>
-
-" Tagbar
-Plug 'majutsushi/tagbar'
-    let g:tagbar_autoclose = 1
-    set tags=./tags,tags;$HOME
-    nnoremap ,, :Tags<CR>
-    nnoremap ,t :TagbarToggle<CR>
-    nnoremap <Leader>tt :GenerateTags<CR>
-
+" Tags
+Plug 'jsfaint/gen_tags.vim'
+    nnoremap <Leader>tg :GenCtags<CR>
+    nnoremap <Leader>tc :ClearCtags<CR>
+    let g:gen_tags#statusline = 1
+    let g:gen_tags#ctags_auto_gen = 1
+    let g:gen_tags#ctags_opts = [
+        \ "--python-kinds=+cfm-x",
+        \ "--exclude=node_modules",
+        \ "--exclude=__pycache__",
+        \ "--exclude=schema.graphql",
+        \ "--exclude=*.py[ocm]",
+        \ "--append=no"
+    \ ]
+    let g:gen_tags#use_cache_dir = 0
 
 " Nerdtools
 Plug 'scrooloose/nerdcommenter'
@@ -120,40 +111,39 @@ Plug 'vim-airline/vim-airline-themes'
     let g:airline#extensions#tabline#enabled = 1
     let g:airline#extensions#tabline#show_close_button = 0
 
+" Devicons
 Plug 'ryanoasis/vim-devicons'
-
-" Chore
-Plug 'tpope/vim-eunuch'
-Plug 'tpope/vim-repeat'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-surround'
-    nmap ys <Plug>Ysurroundw
-Plug 'airblade/vim-gitgutter'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'iamcco/markdown-preview.vim'
-Plug 'schickling/vim-bufonly'
 
 " Window navigation
 Plug 't9md/vim-choosewin'
     nmap - <Plug>(choosewin)
 
-" Snippets
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-    let g:UltiSnipsExpandTrigger="<tab>"
-    let g:UltiSnipsJumpBackwardTrigger="<c-c>"
-    let g:UltiSnipsJumpForwardTrigger="<c-b>"
+" Conquer of Completion
+"Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+    "" Python support
+    "let g:python_host_prog = '/usr/local/bin/python'
+    "let g:python3_host_prog = '/usr/local/bin/python3'
 
+    "" Remap keys for gotos
+    "nmap <silent> gd <Plug>(coc-definition)
+    "nmap <silent> gy <Plug>(coc-type-definition)
+    "nmap <silent> gi <Plug>(coc-implementation)
+    "nmap <silent> gr <Plug>(coc-references)
 
-" Autocompletion
-" Deoplete
-Plug 'Shougo/deoplete.nvim'
-    let g:deoplete#enable_at_startup = 1
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
 
-    " Dependencies
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
+" Buffers
+Plug 'schickling/vim-bufonly'
+
+" Chore
+Plug 'tpope/vim-eunuch'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+    nmap ys <Plug>Ysurroundw
+Plug 'terryma/vim-multiple-cursors'
+Plug 'christoomey/vim-tmux-navigator'
 
 """"""""""""""""""""""""""""""""""""""""
 " Language specific
@@ -161,12 +151,14 @@ Plug 'Shougo/deoplete.nvim'
 " Javascript
 Plug 'pangloss/vim-javascript', {'for': ['javascript', 'js']}
 " Python
-Plug 'jeetsukumaran/vim-pythonsense', {'for': 'python'}
+Plug 'jeetsukumaran/vim-pythonsense', {'for': ['python', 'py']}
 " Ruby
 Plug 'vim-ruby/vim-ruby', {'for': 'ruby'}
 Plug 'ngmy/vim-rubocop', {'for': 'ruby'}
 " HTML/CSS
 Plug 'mattn/emmet-vim', {'for': ['html', 'css']}
+" Kotlin
+Plug 'udalov/kotlin-vim', {'for': ['kotlin', 'kt', 'kts']}
 
 filetype plugin indent on
 call plug#end()
@@ -176,10 +168,6 @@ call plug#end()
 """"""""""""""""""""""""""""""""""""""""
 " Colorscheme
 colorscheme abstract
-
-" Deoplete
-call deoplete#custom#option('max_list', 5)
-
 
 """"""""""""""""""""""""""""""""""""""""
 " }}}
@@ -208,7 +196,6 @@ set expandtab
 set laststatus=2
 set ignorecase
 set autoread
-set pastetoggle=<C-P>
 set incsearch
 set redrawtime=10000
 set timeoutlen=1000
@@ -222,6 +209,7 @@ set scrolloff=5
 """"""""""""""""""""""""""""""""""""""""
 " #Mappings/Functions {{{
 """"""""""""""""""""""""""""""""""""""""
+map <Space> <Leader>
 command! PrettyXML call utils#do_pretty_xml()
 
 noremap <Leader>cp "+y:echo 'selection copied!'<CR>
