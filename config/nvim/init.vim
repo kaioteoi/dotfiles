@@ -36,6 +36,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'jsfaint/gen_tags.vim'
     nnoremap <Leader>tg :GenCtags<CR>
     nnoremap <Leader>tc :ClearCtags<CR>
+    nnoremap <Leader>tr :ClearCtags<CR>:GenCtags<CR>
     let g:gen_tags#statusline = 1
     let g:gen_tags#ctags_auto_gen = 1
     let g:gen_tags#ctags_opts = [
