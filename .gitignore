@@ -10,3 +10,4 @@ tags
 *.netrwhist
 .vim/vimrc
 .vim/.netrwhist
+**/plug.vim
