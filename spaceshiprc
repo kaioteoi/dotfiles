@@ -1,3 +1,0 @@
-export SPACESHIP_CHAR_SYMBOL='$ '
-export SPACESHIP_DIR_COLOR=magenta
-export SPACESHIP_USER_SHOW=always
