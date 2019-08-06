@@ -2,12 +2,6 @@
 plugged
 *.swp
 tags
-*/*.sessions
-*.sessions
-.sessions
-*sessions*
+**/sessions
 **/*.netrwhist
-*.netrwhist
-.vim/vimrc
-.vim/.netrwhist
 **/plug.vim
