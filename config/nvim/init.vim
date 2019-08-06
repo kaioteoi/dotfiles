@@ -5,8 +5,8 @@ set encoding=utf-8
 scriptencoding utf-8
 
 " Auto install plug if not found
-if empty(glob('~/.vim/autoload/plug.vim'))
-    silent !curl -fLo ~/.config//nvim/autoload/plug.vim --create-dirs
+if empty(glob('~/.config/nvim/autoload/plug.vim'))
+    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
            \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
     augroup PLUG
@@ -21,7 +21,7 @@ endif
 """"""""""""""""""""""""""""""""""""""""
 " Plugins {{{
 """"""""""""""""""""""""""""""""""""""""
-call plug#begin('~/.vim/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 " FZF
 Plug 'junegunn/fzf.vim'
@@ -90,7 +90,7 @@ Plug 'easymotion/vim-easymotion'
 " Vim session
 Plug 'xolox/vim-misc'
 Plug 'xolox/vim-session'
-    let g:session_directory = $HOME.'/.vim/sessions/'
+    let g:session_directory = $HOME.'/.config/nvim/sessions/'
     let g:session_command_aliases = 1
     let g:session_autosave = 'yes'
     let g:session_autoload = 'no'
