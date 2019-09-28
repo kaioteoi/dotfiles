@@ -44,6 +44,7 @@ KEYTIMEOUT=1
 bindkey "^P" up-line-or-search
 bindkey "^N" down-line-or-search
 source ~/.power
+export NVIM="/usr/local/bin/nvim"
 export EDITOR=$NVIM
 export PATH="/usr/local/sbin:$PATH"
 ########################################
@@ -53,6 +54,8 @@ export PATH="/usr/local/sbin:$PATH"
 # oh-my-zsh {{
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 # }}
 # ssh {{
 export SSH_KEY_PATH="~/.ssh/keygo"
