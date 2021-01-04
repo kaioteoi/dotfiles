@@ -46,7 +46,12 @@ bindkey "^N" down-line-or-search
 source ~/.power
 export NVIM="/usr/local/bin/nvim"
 export EDITOR=$NVIM
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+  eval "$(pyenv virtualenv-init -)"
+fi
 ########################################
 # }}
 # Program specifics {{
