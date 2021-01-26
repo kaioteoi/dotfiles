@@ -45,6 +45,10 @@ Plug 'jsfaint/gen_tags.vim'
         \ "--exclude=__pycache__",
         \ "--exclude=schema.graphql",
         \ "--exclude=*.py[ocm]",
+        \ "--exclude=public",
+        \ "--exclude=karma_tests.js",
+        \ "--exclude=.shadow-cljs",
+        \ "--exclude=.idea",
         \ "--append=no"
     \ ]
     let g:gen_tags#use_cache_dir = 0
@@ -120,7 +124,7 @@ Plug 't9md/vim-choosewin'
     nmap - <Plug>(choosewin)
 
 " Conquer of Completion
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
     " Python support
     let g:python_host_prog = '/usr/local/bin/python'
     let g:python3_host_prog = '/usr/local/bin/python3'
@@ -137,6 +141,9 @@ Plug 'airblade/vim-gitgutter'
 
 " Buffers
 Plug 'schickling/vim-bufonly'
+
+" Parentheses styling
+Plug 'kien/rainbow_parentheses.vim'
 
 " Chore
 Plug 'tpope/vim-eunuch'
@@ -160,6 +167,12 @@ Plug 'ngmy/vim-rubocop', {'for': 'ruby'}
 Plug 'mattn/emmet-vim', {'for': ['html', 'css']}
 " Kotlin
 Plug 'udalov/kotlin-vim', {'for': ['kotlin', 'kt', 'kts']}
+" Clojure
+Plug 'clojure-vim/clojure.vim'
+Plug 'tpope/vim-dispatch'
+Plug 'clojure-vim/vim-jack-in'
+Plug 'radenling/vim-dispatch-neovim'
+Plug 'Olical/conjure'
 
 filetype plugin indent on
 call plug#end()
@@ -202,6 +215,8 @@ set redrawtime=10000
 set timeoutlen=1000
 set ttimeoutlen=0
 set scrolloff=5
+set nowrap
+set clipboard=unnamed
 
 """"""""""""""""""""""""""""""""""""""""
 " }}}
