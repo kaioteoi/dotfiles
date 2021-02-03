@@ -173,6 +173,11 @@ Plug 'tpope/vim-dispatch'
 Plug 'clojure-vim/vim-jack-in'
 Plug 'radenling/vim-dispatch-neovim'
 Plug 'Olical/conjure'
+" PUML
+Plug 'aklt/plantuml-syntax'
+Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
+    let g:mkdp_filetypes = ['markdown', 'puml', 'plantuml']
+
 
 filetype plugin indent on
 call plug#end()
@@ -228,7 +233,7 @@ set clipboard=unnamed
 map <Space> <Leader>
 command! PrettyXML call utils#do_pretty_xml()
 
-noremap <Leader>cp "+y:echo 'selection copied!'<CR>
+vnoremap <Leader>cp "+y:echo 'selection copied!'<CR>
 noremap <Leader>cl <Esc>0v$h"+y:echo 'line copied!'<CR>
 nnoremap <Leader>cw viw"+y:echo 'word copied!'<CR>
 vnoremap // y/<C-R>"<CR>
