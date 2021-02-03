@@ -93,6 +93,10 @@ fi
 # Hook for desk activation
 [ -n "$DESK_ENV" ] && source "$DESK_ENV" || true
 # }}
+# SDKMAN {{
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+# }}
 ########################################
 # }}
 ########################################
