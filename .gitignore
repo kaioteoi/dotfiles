@@ -4,4 +4,5 @@ plugged
 tags
 **/sessions
 **/*.netrwhist
-**/plug.vim
+**/*/plug.vim
+**/*/.vim
