@@ -1,14 +1,7 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 ########################################
 # Theme {{
 ########################################
-ZSH_THEME=powerlevel10k/powerlevel10k
+ZSH_THEME="simplerich"
 ########################################
 # }}
 # Plugins {{
@@ -19,8 +12,8 @@ plugins=(
     brew
     docker-compose
     extract
+    fzf
     git
-    iterm2
     kubectl
     kubectx
     pip
@@ -50,7 +43,7 @@ alias ktx="kubectx"
 alias kns="kubens"
 alias src="omz reload"
 alias clj-repl='clojure -M:dev:local/devtools:repl/conjure'
-# Pipo 
+# Pipo
 psv() {
     pipo secrets view "$1" "$2" | bat -l json
 }
@@ -63,7 +56,6 @@ pfcv() {
 pfce() {
     pipo features-config edit "$1"
 }
-
 
 gri () {
     git rebase -i $(git rev-parse origin/master)
@@ -86,9 +78,6 @@ nrepl() {
 export LANG=en_US.UTF-8
 # 10ms for key sequences
 KEYTIMEOUT=1
-# History search bind
-source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 bindkey "^P" history-substring-search-up
 bindkey "^N" history-substring-search-down
 export NVIM="/usr/local/bin/nvim"
@@ -106,6 +95,7 @@ RPS1='$(kubectx_prompt_info)'
 # }}
 # Program specifics {{
 ########################################
+fpath+=${ZSH_CUSTOM:-${ZSH:-~/.oh-my-zsh}/custom}/plugins/zsh-completions/src
 ZSH_DISABLE_COMPFIX=true
 # oh-my-zsh {{
 export ZSH=~/.oh-my-zsh
