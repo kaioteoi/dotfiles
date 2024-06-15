@@ -6,3 +6,4 @@ tags
 **/*.netrwhist
 **/*/plug.vim
 **/*/.vim
+Session.vim
