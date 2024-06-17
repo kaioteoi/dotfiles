@@ -1,0 +1,14 @@
+import = [
+    "~/.config/alacritty/catppuccin-mocha.toml"
+]
+
+[font]
+size = 15.5
+normal.family = 'FiraCode Nerd Font'
+
+[keyboard]
+bindings = [
+  { key = "Right", mods = "Alt", chars = "\u001BF" },
+  { key = "Left",  mods = "Alt", chars = "\u001BB" },
+]
+
