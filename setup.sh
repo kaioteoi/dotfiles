@@ -27,12 +27,9 @@ else
 fi
 
 # Oh-my-zsh theme setup
-# Simplerich
-# https://github.com/philip82148/simplerich-zsh-theme?tab=readme-ov-file#install
-# cd path/to/where_u_want_to_clone_the_repo
-if [ ! -d ~/.zsh-theme ]; then
-    git clone --recursive https://github.com/philip82148/simplerich-zsh-theme ~/.zsh-theme/
-    cp ~/.zsh-theme/simplerich.zsh-theme ~/.oh-my-zsh/themes/
+if [ ! -d "$ZSH_CUSTOM/themes/spaceship-prompt" ]; then
+    git clone https://github.com/spaceship-prompt/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt" --depth=1
+    ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
 fi
 
 # Oh-my-zsh plugins
@@ -68,5 +65,19 @@ fi
 
 if [ ! -f ~/.config/alacritty/catpuccin-mocha.toml ]; then
     curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-mocha.toml
+fi
+
+if [ ! $(ls -R ~/Library/Fonts | grep ttf) ]; then
+    brew install font-fira-code-nerd-font
+fi
+# endregion
+
+# region tmux
+if [ ! $(which tmux) ]; then
+    brew install tmux
+fi
+
+if [ ! -d ~/.tmux/plugins/tpm ]; then
+    git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 # endregion
