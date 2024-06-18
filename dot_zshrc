@@ -1,7 +1,7 @@
 ########################################
 # Theme {{
 ########################################
-ZSH_THEME="simplerich"
+ZSH_THEME="spaceship"
 ########################################
 # }}
 # Plugins {{
@@ -31,7 +31,6 @@ plugins=(
 ########################################
 alias zshrc="vim ~/.zshrc"
 alias vimrc="vim ~/.config/nvim/init.vim"
-alias spaceshiprc="vim ~/.spaceshiprc"
 alias kclip="xclip -sel cli <"
 alias gdestroy="gsta -u && gstd"
 alias vim=nvim
@@ -80,7 +79,7 @@ export LANG=en_US.UTF-8
 KEYTIMEOUT=1
 bindkey "^P" history-substring-search-up
 bindkey "^N" history-substring-search-down
-export NVIM="/usr/local/bin/nvim"
+export NVIM=$(which nvim)
 export EDITOR=$NVIM
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="/usr/local/sbin:$PATH"
@@ -100,10 +99,6 @@ ZSH_DISABLE_COMPFIX=true
 # oh-my-zsh {{
 export ZSH=~/.oh-my-zsh
 source $ZSH/oh-my-zsh.sh
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-source ~/.power
-[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
-# }}
 # ssh {{
 export SSH_KEY_PATH="~/.ssh/keygo"
 # }}
