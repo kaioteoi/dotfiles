@@ -91,6 +91,12 @@ if [ ! $(mdfind "kMDItemKind == 'Application'" | grep /Applications/Alacritty.ap
     brew install --cask alacritty
 fi
 
+if [ ! $(infocmp alacritty) ]; then
+    git clone https://github.com/alacritty/alacritty.git /tmp/alacritty
+    sudo tic -xe alacritty,alacritty-direct /tmp/alacritty/extra/alacritty.info
+    rm -rf /tmp/alacritty
+fi
+
 if [ ! -f ~/.config/alacritty/catpuccin-mocha.toml ]; then
     curl -LO --output-dir ~/.config/alacritty https://github.com/catppuccin/alacritty/raw/main/catppuccin-mocha.toml
 fi
