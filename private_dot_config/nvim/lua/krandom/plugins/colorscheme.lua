@@ -1,7 +1,7 @@
 return {
-	'rebelot/kanagawa.nvim',
-	as = 'kanagawa',
-	config = function()
-		vim.cmd('colorscheme kanagawa')
-	end
+    "catppuccin/nvim",
+    name = 'catppuccin',
+    config = function()
+        vim.cmd('colorscheme catppuccin')
+    end
 }
