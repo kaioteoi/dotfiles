@@ -115,3 +115,10 @@ if [ ! -d ~/.tmux/plugins/tpm ]; then
     git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 fi
 # endregion
+
+# Language specifics
+
+## Lua
+if [ ! $(which stylua) ]; then
+    brew install stylua
+fi
