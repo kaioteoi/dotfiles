@@ -91,7 +91,11 @@ if [ ! $(mdfind "kMDItemKind == 'Application'" | grep /Applications/Alacritty.ap
     brew install --cask alacritty
 fi
 
-if [ ! $(infocmp alacritty) ]; then
+infocmp alacritty &> /dev/null;
+if [ $? -eq 0 ]; then
+    echo -e "${ORANGE}Alacritty term already configured, skipped.${RESET}"
+else
+    echo -e "${GREEN}Configuring Alacritty terminfo...${RESET}"
     git clone https://github.com/alacritty/alacritty.git /tmp/alacritty
     sudo tic -xe alacritty,alacritty-direct /tmp/alacritty/extra/alacritty.info
     rm -rf /tmp/alacritty
@@ -116,9 +120,20 @@ if [ ! -d ~/.tmux/plugins/tpm ]; then
 fi
 # endregion
 
-# Language specifics
+# region Language specifics
 
-## Lua
+## region Lua
 if [ ! $(which stylua) ]; then
     brew install stylua
 fi
+## endregion Lua
+
+# endregion Language specifics
+
+# region Bash tools
+## region bat
+if [ ! $(which bat) ]; then
+    brew install bat
+fi
+## endregion bat
+#
