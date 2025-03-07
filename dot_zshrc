@@ -1,7 +1,7 @@
 ########################################
 # Theme {{
 ########################################
-ZSH_THEME="spaceship"
+ZSH_THEME="common"
 ########################################
 # }}
 # Plugins {{
@@ -44,7 +44,7 @@ alias src="omz reload"
 alias clj-repl='clojure -M:dev:local/devtools:repl/conjure'
 # Pipo
 psv() {
-    pipo secrets view "$1" "$2" | bat -l json
+    pipo secrets view "$1" "$2" | bat --paging=always -l json
 }
 pse() {
     pipo secrets edit "$1" "$2"
@@ -164,5 +164,8 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
 
+#export PATH="/Users/kaioteoi/Projects/apache-maven-3.9.9/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="/Applications/IntelliJ IDEA CE.app/Contents/MacOS:$PATH"
+export PATH="/usr/local/homebrew/opt/openjdk@11/bin:$PATH"
+export PIPO_HOME="$HOME/pipo"
