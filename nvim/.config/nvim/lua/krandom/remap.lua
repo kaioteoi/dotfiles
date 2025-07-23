@@ -32,5 +32,5 @@ vim.keymap.set('n', '<leader>s', [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><
 
 -- shoutout config
 vim.keymap.set('n', '<leader><leader>', function()
-  vim.cmd 'so'
+    vim.cmd 'so'
 end)
