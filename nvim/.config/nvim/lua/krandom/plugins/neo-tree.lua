@@ -10,14 +10,11 @@ return {
         'MunifTanjim/nui.nvim',
     },
     lazy = false, -- neo-tree will lazily load itself
-    ---@module "neo-tree"
-    ---@type neotree.Config?
-    opts = {
-        -- add options here
-    },
     keys = {
         { '\\', ':Neotree reveal<CR>', desc = 'NeoTree reveal', silent = true },
     },
+    ---@module "neo-tree"
+    ---@type neotree.Config?
     opts = {
         filesystem = {
             window = {
@@ -25,6 +22,9 @@ return {
                     ['\\'] = 'close_window',
                 },
             },
+        },
+        window = {
+            position = 'float',
         },
     },
 }
